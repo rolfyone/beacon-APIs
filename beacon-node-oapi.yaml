@@ -1696,6 +1696,8 @@ paths:
                                         - description: Ethereum 1.x block hash.
                                 graffiti:
                                   type: string
+                                  format: hex
+                                  example: '0xcf8e0d4e9587369b2301d0790347320302cc0943d5a1884560367e8208d920f2'
                                   pattern: '^0x[a-fA-F0-9]{64}$'
                                 proposer_slashings:
                                   type: array
@@ -2095,6 +2097,8 @@ paths:
                                         - description: Ethereum 1.x block hash.
                                 graffiti:
                                   type: string
+                                  format: hex
+                                  example: '0xcf8e0d4e9587369b2301d0790347320302cc0943d5a1884560367e8208d920f2'
                                   pattern: '^0x[a-fA-F0-9]{64}$'
                                 proposer_slashings:
                                   type: array
@@ -2509,6 +2513,8 @@ paths:
                                             - description: Ethereum 1.x block hash.
                                     graffiti:
                                       type: string
+                                      format: hex
+                                      example: '0xcf8e0d4e9587369b2301d0790347320302cc0943d5a1884560367e8208d920f2'
                                       pattern: '^0x[a-fA-F0-9]{64}$'
                                     proposer_slashings:
                                       type: array
@@ -3111,6 +3117,8 @@ paths:
                                               - description: Ethereum 1.x block hash.
                                       graffiti:
                                         type: string
+                                        format: hex
+                                        example: '0xcf8e0d4e9587369b2301d0790347320302cc0943d5a1884560367e8208d920f2'
                                         pattern: '^0x[a-fA-F0-9]{64}$'
                                       proposer_slashings:
                                         type: array
@@ -3510,6 +3518,8 @@ paths:
                                               - description: Ethereum 1.x block hash.
                                       graffiti:
                                         type: string
+                                        format: hex
+                                        example: '0xcf8e0d4e9587369b2301d0790347320302cc0943d5a1884560367e8208d920f2'
                                         pattern: '^0x[a-fA-F0-9]{64}$'
                                       proposer_slashings:
                                         type: array
@@ -3923,6 +3933,8 @@ paths:
                                                   - description: Ethereum 1.x block hash.
                                           graffiti:
                                             type: string
+                                            format: hex
+                                            example: '0xcf8e0d4e9587369b2301d0790347320302cc0943d5a1884560367e8208d920f2'
                                             pattern: '^0x[a-fA-F0-9]{64}$'
                                           proposer_slashings:
                                             type: array
@@ -7624,12 +7636,12 @@ paths:
                         - any value starting with 0x in the spec is returned as a hex string
                         - numeric values are returned as a quoted integer
                     type: object
-                example:
-                  DEPOSIT_CONTRACT_ADDRESS: '0x00000000219ab540356cBB839Cbe05303d7705Fa'
-                  DEPOSIT_NETWORK_ID: '1'
-                  DOMAIN_AGGREGATE_AND_PROOF: '0x06000000'
-                  INACTIVITY_PENALTY_QUOTIENT: '67108864'
-                  INACTIVITY_PENALTY_QUOTIENT_ALTAIR: '50331648'
+                    example:
+                      DEPOSIT_CONTRACT_ADDRESS: '0x00000000219ab540356cBB839Cbe05303d7705Fa'
+                      DEPOSIT_NETWORK_ID: '1'
+                      DOMAIN_AGGREGATE_AND_PROOF: '0x06000000'
+                      INACTIVITY_PENALTY_QUOTIENT: '67108864'
+                      INACTIVITY_PENALTY_QUOTIENT_ALTAIR: '50331648'
         '500':
           description: Beacon node internal error.
           content:
@@ -8163,6 +8175,15 @@ paths:
             format: hex
             example: '0xcf8e0d4e9587369b2301d0790347320302cc0943d5a1884560367e8208d920f2'
             pattern: '^0x[a-fA-F0-9]{64}$'
+        - name: skip_randao_verification
+          in: query
+          required: false
+          description: |
+            Skip verification of the `randao_reveal` value. If this flag is set then the
+            `randao_reveal` must be set to the point at infinity (`0xc0..00`). This query parameter
+            is a flag and does not take a value.
+          schema: {}
+          allowEmptyValue: true
       responses:
         '200':
           description: Success response
@@ -8252,6 +8273,8 @@ paths:
                                           - description: Ethereum 1.x block hash.
                                   graffiti:
                                     type: string
+                                    format: hex
+                                    example: '0xcf8e0d4e9587369b2301d0790347320302cc0943d5a1884560367e8208d920f2'
                                     pattern: '^0x[a-fA-F0-9]{64}$'
                                   proposer_slashings:
                                     type: array
@@ -8643,6 +8666,8 @@ paths:
                                           - description: Ethereum 1.x block hash.
                                   graffiti:
                                     type: string
+                                    format: hex
+                                    example: '0xcf8e0d4e9587369b2301d0790347320302cc0943d5a1884560367e8208d920f2'
                                     pattern: '^0x[a-fA-F0-9]{64}$'
                                   proposer_slashings:
                                     type: array
@@ -9048,6 +9073,8 @@ paths:
                                               - description: Ethereum 1.x block hash.
                                       graffiti:
                                         type: string
+                                        format: hex
+                                        example: '0xcf8e0d4e9587369b2301d0790347320302cc0943d5a1884560367e8208d920f2'
                                         pattern: '^0x[a-fA-F0-9]{64}$'
                                       proposer_slashings:
                                         type: array
@@ -9658,6 +9685,8 @@ paths:
                                           - description: Ethereum 1.x block hash.
                                   graffiti:
                                     type: string
+                                    format: hex
+                                    example: '0xcf8e0d4e9587369b2301d0790347320302cc0943d5a1884560367e8208d920f2'
                                     pattern: '^0x[a-fA-F0-9]{64}$'
                                   proposer_slashings:
                                     type: array
@@ -10049,6 +10078,8 @@ paths:
                                           - description: Ethereum 1.x block hash.
                                   graffiti:
                                     type: string
+                                    format: hex
+                                    example: '0xcf8e0d4e9587369b2301d0790347320302cc0943d5a1884560367e8208d920f2'
                                     pattern: '^0x[a-fA-F0-9]{64}$'
                                   proposer_slashings:
                                     type: array
@@ -10455,6 +10486,8 @@ paths:
                                               - description: Ethereum 1.x block hash.
                                       graffiti:
                                         type: string
+                                        format: hex
+                                        example: '0xcf8e0d4e9587369b2301d0790347320302cc0943d5a1884560367e8208d920f2'
                                         pattern: '^0x[a-fA-F0-9]{64}$'
                                       proposer_slashings:
                                         type: array
@@ -12539,6 +12572,8 @@ components:
                         - description: Ethereum 1.x block hash.
                 graffiti:
                   type: string
+                  format: hex
+                  example: '0xcf8e0d4e9587369b2301d0790347320302cc0943d5a1884560367e8208d920f2'
                   pattern: '^0x[a-fA-F0-9]{64}$'
                 proposer_slashings:
                   type: array
@@ -12935,6 +12970,8 @@ components:
                             - description: Ethereum 1.x block hash.
                     graffiti:
                       type: string
+                      format: hex
+                      example: '0xcf8e0d4e9587369b2301d0790347320302cc0943d5a1884560367e8208d920f2'
                       pattern: '^0x[a-fA-F0-9]{64}$'
                     proposer_slashings:
                       type: array
@@ -14194,6 +14231,8 @@ components:
                             - description: Ethereum 1.x block hash.
                     graffiti:
                       type: string
+                      format: hex
+                      example: '0xcf8e0d4e9587369b2301d0790347320302cc0943d5a1884560367e8208d920f2'
                       pattern: '^0x[a-fA-F0-9]{64}$'
                     proposer_slashings:
                       type: array
@@ -14603,6 +14642,8 @@ components:
                         - description: Ethereum 1.x block hash.
                 graffiti:
                   type: string
+                  format: hex
+                  example: '0xcf8e0d4e9587369b2301d0790347320302cc0943d5a1884560367e8208d920f2'
                   pattern: '^0x[a-fA-F0-9]{64}$'
                 proposer_slashings:
                   type: array
@@ -15882,6 +15923,8 @@ components:
                             - description: Ethereum 1.x block hash.
                     graffiti:
                       type: string
+                      format: hex
+                      example: '0xcf8e0d4e9587369b2301d0790347320302cc0943d5a1884560367e8208d920f2'
                       pattern: '^0x[a-fA-F0-9]{64}$'
                     proposer_slashings:
                       type: array
@@ -16359,6 +16402,8 @@ components:
                                 - description: Ethereum 1.x block hash.
                         graffiti:
                           type: string
+                          format: hex
+                          example: '0xcf8e0d4e9587369b2301d0790347320302cc0943d5a1884560367e8208d920f2'
                           pattern: '^0x[a-fA-F0-9]{64}$'
                         proposer_slashings:
                           type: array
@@ -16837,6 +16882,8 @@ components:
                             - description: Ethereum 1.x block hash.
                     graffiti:
                       type: string
+                      format: hex
+                      example: '0xcf8e0d4e9587369b2301d0790347320302cc0943d5a1884560367e8208d920f2'
                       pattern: '^0x[a-fA-F0-9]{64}$'
                     proposer_slashings:
                       type: array
@@ -17311,6 +17358,8 @@ components:
                                 - description: Ethereum 1.x block hash.
                         graffiti:
                           type: string
+                          format: hex
+                          example: '0xcf8e0d4e9587369b2301d0790347320302cc0943d5a1884560367e8208d920f2'
                           pattern: '^0x[a-fA-F0-9]{64}$'
                         proposer_slashings:
                           type: array
